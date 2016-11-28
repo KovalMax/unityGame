@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad84a439c01f4d84e9beee96eb4af360
+timeCreated: 1480359922
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - meteorPrefab: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
