@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: ad84a439c01f4d84e9beee96eb4af360
-timeCreated: 1480777652
+timeCreated: 1480791910
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - meteorPrefab: {fileID: 1000011321157982, guid: 620306c79340a9546b57e62e0b2ad86c,
+  - meteorObj: {fileID: 1000011321157982, guid: 620306c79340a9546b57e62e0b2ad86c,
       type: 2}
   - playerObj: {instanceID: 0}
   - shootObj: {fileID: 1000013570301864, guid: 6ab09dabf7b2f20419ce29bc81ef22dd, type: 2}

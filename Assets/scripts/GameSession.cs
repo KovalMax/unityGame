@@ -12,11 +12,12 @@ public class GameSession : MonoBehaviour
 	int shootsToOverHeat = 10;
 	int shootCounter = 0;
 	bool weaponCooling = false;
+	Color color = new Color32 (71, 122, 182, 255);
 
 	public static bool isDead = false;
 	public static bool waitingForNewGame = false;
 
-	public GameObject meteorPrefab;
+	public GameObject meteorObj;
 	public GameObject playerObj;
 	public GameObject shootObj;
 
@@ -36,6 +37,7 @@ public class GameSession : MonoBehaviour
 			{
 				weaponOverHeatTime = overHeatTime;
 				weaponCooling = false;
+				playerObj.GetComponent<Renderer> ().material.color = color;
 			}
 		}
 
@@ -44,7 +46,7 @@ public class GameSession : MonoBehaviour
 
 		if (spawnTime < 0 && !isDead)
 		{
-			Instantiate(meteorPrefab, new Vector3(Random.Range(-4.38f, 4.38f), 0.5f, 15f), Quaternion.identity);
+			Instantiate(meteorObj, new Vector3(Random.Range(-4.38f, 4.38f), 0.5f, 15f), Quaternion.identity);
 			spawnTime = initialSpawnTime;
 		}
 
@@ -74,7 +76,13 @@ public class GameSession : MonoBehaviour
 			{
 				shootCounter = 0;
 				weaponCooling = true;
+				playerObj.GetComponent<Renderer> ().material.color = Color.red;
 			}
+		}
+
+		if (Input.GetKey (KeyCode.Escape)) 
+		{
+			Application.Quit ();
 		}
 	}
 
@@ -93,6 +101,8 @@ public class GameSession : MonoBehaviour
 		gameRoundTime = 30.0d;
 		initialSpawnTime = 5.0d;
 		roundCounter = 0;
+		shootCounter = 0;
+		weaponOverHeatTime = overHeatTime;
 		waitingForNewGame = true;
 	}
 }
