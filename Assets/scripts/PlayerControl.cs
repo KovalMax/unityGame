@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 	private int playerSpeed = 6;
-	public static bool isDead = false;
-	public static bool waitingForNewGame = false;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -16,12 +16,13 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKey (KeyCode.RightArrow) && transform.position.x < 4.38f)
 		{
 			transform.Translate (Vector3.right * playerSpeed * Time.deltaTime);
-		} else if (Input.GetKey (KeyCode.LeftArrow) && transform.position.x > -4.38f) 
+		} 
+		else if (Input.GetKey (KeyCode.LeftArrow) && transform.position.x > -4.38f) 
 		{
 			transform.Translate (Vector3.left * playerSpeed * Time.deltaTime);
 		}
 
-		if (isDead && Input.GetKey (KeyCode.Space))
+		if (GameSession.isDead && Input.GetKey (KeyCode.Space))
 		{
 			restartGame ();			
 		}
@@ -31,14 +32,14 @@ public class PlayerControl : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Meteor") 
 		{
-			isDead = true;
+			GameSession.isDead = true;
 		}
 	}
 
 	public static void restartGame() 
 	{
-		isDead = false;
-		waitingForNewGame = false;
+		GameSession.isDead = false;
+		GameSession.waitingForNewGame = false;
 		Debug.Log ("Starting New Game");
 	}
 }

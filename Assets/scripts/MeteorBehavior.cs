@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MeteorBehavior : MonoBehaviour {
-	private int meteorSpeed = 6;
+	int meteorSpeed = 6;
 
 	// Use this for initialization
 	void Start ()
@@ -23,7 +23,11 @@ public class MeteorBehavior : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col)
 	{
-		if (col.gameObject.tag == "Player")
+		if (col.gameObject.tag == "playerWeapon") 
+		{
+			Destroy (this.gameObject);
+		}
+		else if (col.gameObject.tag == "Player")
 		{
 			Destroy (this.gameObject);
 			foreach (var clone in GameObject.FindGameObjectsWithTag("Meteor")) 

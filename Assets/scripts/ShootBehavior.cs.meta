@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6dc0cf9c394b9e448a54516fc2672a12
+timeCreated: 1480777086
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - weaponShotPrefab: {fileID: 1000013570301864, guid: 6ab09dabf7b2f20419ce29bc81ef22dd,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
